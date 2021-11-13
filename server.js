@@ -10,6 +10,9 @@ const runner = require('./test-runner.js');
 
 const app = express();
 
+const cors = require ('cors')();
+app.use(cors({origin: '*'}))
+
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/assets', express.static(process.cwd() + '/assets'));
 app.use(helmet.noSniff());
